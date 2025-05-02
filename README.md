@@ -1,1 +1,2 @@
-# Tech_Stock_VS_News_Sentiment
+# Tech_Stocks_VS_News_Sentiment
+Airflow + Python + PostgreSQL + Tableau project
