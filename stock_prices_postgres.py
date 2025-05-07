@@ -9,7 +9,7 @@ port_id = 5432
 conn = None
 cur = None
 
-csv_file_path = "stock_prices_backup.csv"
+csv_file_path = "assets/stock_prices.csv"
 try:
     conn = psycopg2.connect(
                 host = hostname,
