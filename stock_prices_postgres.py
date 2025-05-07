@@ -1,11 +1,15 @@
 import psycopg2
 import csv
+import os
+from dotenv import load_dotenv
 
-hostname = 'localhost'
-database = 'stocks_and_news'
-username = 'postgres'
-pwd = '22000011'
-port_id = 5432
+
+load_dotenv()
+hostname = os.getenv('HOST_NAME') 
+database = os.getenv('DATABASE') 
+username = os.getenv('USERNAME') 
+pwd = os.getenv('PASSWORD') 
+port_id = os.getenv('PORT_ID') 
 conn = None
 cur = None
 
