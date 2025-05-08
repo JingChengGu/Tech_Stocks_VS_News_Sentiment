@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 
 load_dotenv()
-hostname = os.getenv('HOST_NAME') 
+hostname = os.getenv('HOSTNAME') 
 database = os.getenv('DATABASE') 
 username = os.getenv('USERNAME') 
 pwd = os.getenv('PASSWORD') 
@@ -16,11 +16,11 @@ cur = None
 
 try:
     conn = psycopg2.connect(
-                host = hostname,
-                dbname = database,
-                user = username,
-                password = pwd,
-                port = port_id)
+        dbname=database,
+        user=username,
+        password=pwd,
+        host=hostname,
+        port=port_id)
 
     cur = conn.cursor()
 
