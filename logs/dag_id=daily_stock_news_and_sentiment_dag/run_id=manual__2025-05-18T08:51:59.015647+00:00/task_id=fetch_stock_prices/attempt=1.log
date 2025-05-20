@@ -1,26 +1,3 @@
-[2025-05-18T08:52:06.980+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
-[2025-05-18T08:52:07.025+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-18T08:51:59.015647+00:00 [queued]>
-[2025-05-18T08:52:07.044+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-18T08:51:59.015647+00:00 [queued]>
-[2025-05-18T08:52:07.046+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
-[2025-05-18T08:52:07.078+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_stock_prices> on 2025-05-18 08:51:59.015647+00:00
-[2025-05-18T08:52:07.102+0000] {standard_task_runner.py:72} INFO - Started process 15102 to run task
-[2025-05-18T08:52:07.117+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'daily_stock_news_and_sentiment_dag', 'fetch_stock_prices', 'manual__2025-05-18T08:51:59.015647+00:00', '--job-id', '43', '--raw', '--subdir', 'DAGS_FOLDER/daily_news_sentiment_dag.py', '--cfg-path', '/tmp/tmpqwzo8v9e']
-[2025-05-18T08:52:07.121+0000] {standard_task_runner.py:105} INFO - Job 43: Subtask fetch_stock_prices
-[2025-05-18T08:52:07.225+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-18T08:51:59.015647+00:00 [running]> on host 9f5193fcdf75
-[2025-05-18T08:52:07.491+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_stock_news_and_sentiment_dag' AIRFLOW_CTX_TASK_ID='fetch_stock_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-05-18T08:51:59.015647+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-18T08:51:59.015647+00:00'
-[2025-05-18T08:52:07.503+0000] {logging_mixin.py:190} INFO - Task instance is in running state
-[2025-05-18T08:52:07.505+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
-[2025-05-18T08:52:07.506+0000] {logging_mixin.py:190} INFO - Current task name:fetch_stock_prices state:running start_date:2025-05-18 08:52:07.026655+00:00
-[2025-05-18T08:52:07.508+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag and current dag run status:running
-[2025-05-18T08:52:07.509+0000] {taskinstance.py:732} INFO - ::endgroup::
-[2025-05-18T08:52:11.455+0000] {base.py:84} INFO - Retrieving connection '***_default'
-[2025-05-18T08:52:11.639+0000] {python.py:240} INFO - Done. Returned value was: None
-[2025-05-18T08:52:11.668+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
-[2025-05-18T08:52:11.670+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=daily_stock_news_and_sentiment_dag, task_id=fetch_stock_prices, run_id=manual__2025-05-18T08:51:59.015647+00:00, execution_date=20250518T085159, start_date=20250518T085207, end_date=20250518T085211
-[2025-05-18T08:52:11.730+0000] {logging_mixin.py:190} INFO - Task instance in success state
-[2025-05-18T08:52:11.731+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
-[2025-05-18T08:52:11.732+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag queued_at:2025-05-18 08:51:59.080276+00:00
-[2025-05-18T08:52:11.733+0000] {logging_mixin.py:190} INFO - Task hostname:9f5193fcdf75 operator:PythonOperator
-[2025-05-18T08:52:11.778+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
-[2025-05-18T08:52:11.847+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
-[2025-05-18T08:52:11.852+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+version https://git-lfs.github.com/spec/v1
+oid sha256:443be76abe676fb3122546038297fa351027333b5adfe0d87b1fa0994e2d7cc8
+size 3800

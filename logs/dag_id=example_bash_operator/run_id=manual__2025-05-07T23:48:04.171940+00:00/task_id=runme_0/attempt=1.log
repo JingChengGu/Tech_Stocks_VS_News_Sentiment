@@ -1,15 +1,3 @@
-{"timestamp":"2025-05-07T23:48:09.267384","level":"info","event":"DAG bundles loaded: dags-folder, example_dags","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
-{"timestamp":"2025-05-07T23:48:09.269178","level":"info","event":"Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_bash_operator.py","logger":"airflow.models.dagbag.DagBag"}
-{"timestamp":"2025-05-07T23:48:09.322666","level":"info","event":"Tmp dir root location: /tmp","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
-{"timestamp":"2025-05-07T23:48:09.324290","level":"info","event":"Running command: ['/usr/bin/bash', '-c', 'echo \"example_bash_operator__runme_0__20250507\" && sleep 1']","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
-{"timestamp":"2025-05-07T23:48:09.356645","level":"info","event":"Output:","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
-{"timestamp":"2025-05-07T23:48:09.362909","level":"info","event":"example_bash_operator__runme_0__20250507","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
-{"timestamp":"2025-05-07T23:48:10.369151","level":"info","event":"Command exited with return code 0","logger":"airflow.task.hooks.airflow.providers.standard.hooks.subprocess.SubprocessHook"}
-{"timestamp":"2025-05-07T23:48:10.370023","level":"info","event":"Pushing xcom","ti":"RuntimeTaskInstance(id=UUID('0196ad26-3465-7508-a28c-16e06eef491a'), task_id='runme_0', dag_id='example_bash_operator', run_id='manual__2025-05-07T23:48:04.171940+00:00', try_number=1, map_index=-1, hostname='d8cdc39d4c99', context_carrier=None, task=<Task(BashOperator): runme_0>, bundle_instance=LocalDagBundle(name=example_dags), max_tries=0, start_date=datetime.datetime(2025, 5, 7, 23, 48, 6, 945507, tzinfo=TzInfo(UTC)), end_date=None, is_mapped=False)","logger":"task"}
-{"timestamp":"2025-05-07T23:48:13.183116Z","level":"info","event":"Task instance is in running state","chan":"stdout","logger":"task"}
-{"timestamp":"2025-05-07T23:48:13.183927Z","level":"info","event":" Previous state of the Task instance: queued","chan":"stdout","logger":"task"}
-{"timestamp":"2025-05-07T23:48:13.184933Z","level":"info","event":"Current task name:runme_0","chan":"stdout","logger":"task"}
-{"timestamp":"2025-05-07T23:48:13.185680Z","level":"info","event":"Dag name:example_bash_operator","chan":"stdout","logger":"task"}
-{"timestamp":"2025-05-07T23:48:13.186114Z","level":"info","event":"Task instance in success state","chan":"stdout","logger":"task"}
-{"timestamp":"2025-05-07T23:48:13.186720Z","level":"info","event":" Previous state of the Task instance: running","chan":"stdout","logger":"task"}
-{"timestamp":"2025-05-07T23:48:13.187597Z","level":"info","event":"Task operator:<Task(BashOperator): runme_0>","chan":"stdout","logger":"task"}
+version https://git-lfs.github.com/spec/v1
+oid sha256:0da6515e5a69a23233ad24e28ea3837544cb6b73f1afac24d3a4c25415937e0c
+size 2941
