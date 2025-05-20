@@ -1,0 +1,165 @@
+[2025-05-16T10:51:00.993+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-16T10:51:01.017+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-16T10:46:29.925523+00:00 [queued]>
+[2025-05-16T10:51:01.028+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-16T10:46:29.925523+00:00 [queued]>
+[2025-05-16T10:51:01.029+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 3
+[2025-05-16T10:51:01.044+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_stock_prices> on 2025-05-16 10:46:29.925523+00:00
+[2025-05-16T10:51:01.052+0000] {standard_task_runner.py:72} INFO - Started process 399 to run task
+[2025-05-16T10:51:01.058+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'daily_stock_news_and_sentiment_dag', 'fetch_stock_prices', 'manual__2025-05-16T10:46:29.925523+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/daily_news_sentiment_dag.py', '--cfg-path', '/tmp/tmp_fiordnk']
+[2025-05-16T10:51:01.059+0000] {standard_task_runner.py:105} INFO - Job 17: Subtask fetch_stock_prices
+[2025-05-16T10:51:01.122+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-16T10:46:29.925523+00:00 [running]> on host 9f5193fcdf75
+[2025-05-16T10:51:01.219+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_stock_news_and_sentiment_dag' AIRFLOW_CTX_TASK_ID='fetch_stock_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-05-16T10:46:29.925523+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-16T10:46:29.925523+00:00'
+[2025-05-16T10:51:01.221+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-16T10:51:01.221+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-16T10:51:01.222+0000] {logging_mixin.py:190} INFO - Current task name:fetch_stock_prices state:running start_date:2025-05-16 10:51:01.018718+00:00
+[2025-05-16T10:51:01.223+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag and current dag run status:running
+[2025-05-16T10:51:01.223+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-16T10:51:05.068+0000] {logging_mixin.py:190} INFO - Error fetching TSLA: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:51:05.267+0000] {logging_mixin.py:190} INFO - Error fetching NFLX: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:51:05.468+0000] {logging_mixin.py:190} INFO - Error fetching AMD: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:51:05.660+0000] {logging_mixin.py:190} INFO - Error fetching PLTR: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:51:05.691+0000] {base.py:84} INFO - Retrieving connection '***_default'
+[2025-05-16T10:51:05.820+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "ticker" does not exist
+LINE 1: DELETE FROM stock_prices_data WHERE ticker = 'Apple' AND dat...
+                                            ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/daily_news_sentiment_dag.py", line 76, in fetch_stock_prices
+    conn.execute(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1370, in execute
+    return self._exec_driver_sql(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1674, in _exec_driver_sql
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "ticker" does not exist
+LINE 1: DELETE FROM stock_prices_data WHERE ticker = 'Apple' AND dat...
+                                            ^
+
+[SQL: DELETE FROM stock_prices_data WHERE ticker = %s AND date = %s]
+[parameters: ('Apple', '2025-05-15')]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2025-05-16T10:51:05.839+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-05-16T10:51:05.840+0000] {logging_mixin.py:190} INFO - Task start:2025-05-16 10:51:01.018718+00:00 end:2025-05-16 10:51:05.838964+00:00 duration:4.820246
+[2025-05-16T10:51:05.841+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): fetch_stock_prices> dag:<DAG: daily_stock_news_and_sentiment_dag> dagrun:<DagRun daily_stock_news_and_sentiment_dag @ 2025-05-16 10:46:29.925523+00:00: manual__2025-05-16T10:46:29.925523+00:00, state:running, queued_at: 2025-05-16 10:46:29.974516+00:00. externally triggered: True>
+[2025-05-16T10:51:05.842+0000] {logging_mixin.py:190} INFO - Failure caused by (psycopg2.errors.UndefinedColumn) column "ticker" does not exist
+LINE 1: DELETE FROM stock_prices_data WHERE ticker = 'Apple' AND dat...
+                                            ^
+
+[SQL: DELETE FROM stock_prices_data WHERE ticker = %s AND date = %s]
+[parameters: ('Apple', '2025-05-15')]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2025-05-16T10:51:05.843+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=daily_stock_news_and_sentiment_dag, task_id=fetch_stock_prices, run_id=manual__2025-05-16T10:46:29.925523+00:00, execution_date=20250516T104629, start_date=20250516T105101, end_date=20250516T105105
+[2025-05-16T10:51:05.877+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-16T10:51:05.878+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 17 for task fetch_stock_prices ((psycopg2.errors.UndefinedColumn) column "ticker" does not exist
+LINE 1: DELETE FROM stock_prices_data WHERE ticker = 'Apple' AND dat...
+                                            ^
+
+[SQL: DELETE FROM stock_prices_data WHERE ticker = %s AND date = %s]
+[parameters: ('Apple', '2025-05-15')]
+(Background on this error at: https://sqlalche.me/e/14/f405); 399)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "ticker" does not exist
+LINE 1: DELETE FROM stock_prices_data WHERE ticker = 'Apple' AND dat...
+                                            ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/daily_news_sentiment_dag.py", line 76, in fetch_stock_prices
+    conn.execute(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1370, in execute
+    return self._exec_driver_sql(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1674, in _exec_driver_sql
+    ret = self._execute_context(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1953, in _execute_context
+    self._handle_dbapi_exception(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2134, in _handle_dbapi_exception
+    util.raise_(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1910, in _execute_context
+    self.dialect.do_execute(
+  File "/home/airflow/.local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 736, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "ticker" does not exist
+LINE 1: DELETE FROM stock_prices_data WHERE ticker = 'Apple' AND dat...
+                                            ^
+
+[SQL: DELETE FROM stock_prices_data WHERE ticker = %s AND date = %s]
+[parameters: ('Apple', '2025-05-15')]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2025-05-16T10:51:05.920+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-05-16T10:51:05.948+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-16T10:51:05.950+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

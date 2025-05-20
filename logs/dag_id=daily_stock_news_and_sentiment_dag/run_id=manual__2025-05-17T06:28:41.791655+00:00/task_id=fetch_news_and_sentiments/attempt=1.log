@@ -1,0 +1,28 @@
+[2025-05-17T06:28:49.241+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-17T06:28:49.277+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_news_and_sentiments manual__2025-05-17T06:28:41.791655+00:00 [queued]>
+[2025-05-17T06:28:49.291+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_news_and_sentiments manual__2025-05-17T06:28:41.791655+00:00 [queued]>
+[2025-05-17T06:28:49.292+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-17T06:28:49.315+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_news_and_sentiments> on 2025-05-17 06:28:41.791655+00:00
+[2025-05-17T06:28:49.334+0000] {standard_task_runner.py:72} INFO - Started process 9518 to run task
+[2025-05-17T06:28:49.386+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'daily_stock_news_and_sentiment_dag', 'fetch_news_and_sentiments', 'manual__2025-05-17T06:28:41.791655+00:00', '--job-id', '32', '--raw', '--subdir', 'DAGS_FOLDER/daily_news_sentiment_dag.py', '--cfg-path', '/tmp/tmp2niq1ese']
+[2025-05-17T06:28:49.388+0000] {standard_task_runner.py:105} INFO - Job 32: Subtask fetch_news_and_sentiments
+[2025-05-17T06:28:49.612+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_stock_news_and_sentiment_dag.fetch_news_and_sentiments manual__2025-05-17T06:28:41.791655+00:00 [running]> on host 9f5193fcdf75
+[2025-05-17T06:28:49.902+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_stock_news_and_sentiment_dag' AIRFLOW_CTX_TASK_ID='fetch_news_and_sentiments' AIRFLOW_CTX_EXECUTION_DATE='2025-05-17T06:28:41.791655+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-17T06:28:41.791655+00:00'
+[2025-05-17T06:28:49.916+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-17T06:28:49.923+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-17T06:28:49.927+0000] {logging_mixin.py:190} INFO - Current task name:fetch_news_and_sentiments state:running start_date:2025-05-17 06:28:49.278309+00:00
+[2025-05-17T06:28:49.939+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag and current dag run status:running
+[2025-05-17T06:28:49.943+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-17T06:28:57.104+0000] {base.py:84} INFO - Retrieving connection '***_default'
+[2025-05-17T06:28:57.188+0000] {logging_mixin.py:190} INFO - Inserted 9 rows into news_data for Apple on 2025-05-16
+[2025-05-17T06:28:57.189+0000] {logging_mixin.py:190} INFO - Inserted 1 rows into sentiment_data for Apple on 2025-05-16
+[2025-05-17T06:28:57.205+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-17T06:28:57.218+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-17T06:28:57.220+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=daily_stock_news_and_sentiment_dag, task_id=fetch_news_and_sentiments, run_id=manual__2025-05-17T06:28:41.791655+00:00, execution_date=20250517T062841, start_date=20250517T062849, end_date=20250517T062857
+[2025-05-17T06:28:57.254+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-17T06:28:57.255+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-17T06:28:57.255+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag queued_at:2025-05-17 06:28:41.969954+00:00
+[2025-05-17T06:28:57.256+0000] {logging_mixin.py:190} INFO - Task hostname:9f5193fcdf75 operator:PythonOperator
+[2025-05-17T06:28:57.315+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-17T06:28:57.337+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-17T06:28:57.340+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

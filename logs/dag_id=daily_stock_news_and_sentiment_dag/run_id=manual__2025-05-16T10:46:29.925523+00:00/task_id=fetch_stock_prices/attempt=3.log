@@ -1,0 +1,94 @@
+[2025-05-16T10:56:08.927+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-16T10:56:08.947+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-16T10:46:29.925523+00:00 [queued]>
+[2025-05-16T10:56:08.956+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-16T10:46:29.925523+00:00 [queued]>
+[2025-05-16T10:56:08.958+0000] {taskinstance.py:2867} INFO - Starting attempt 3 of 3
+[2025-05-16T10:56:08.979+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_stock_prices> on 2025-05-16 10:46:29.925523+00:00
+[2025-05-16T10:56:08.990+0000] {standard_task_runner.py:72} INFO - Started process 467 to run task
+[2025-05-16T10:56:08.997+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'daily_stock_news_and_sentiment_dag', 'fetch_stock_prices', 'manual__2025-05-16T10:46:29.925523+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/daily_news_sentiment_dag.py', '--cfg-path', '/tmp/tmp589ig_lt']
+[2025-05-16T10:56:09.000+0000] {standard_task_runner.py:105} INFO - Job 20: Subtask fetch_stock_prices
+[2025-05-16T10:56:09.105+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_stock_news_and_sentiment_dag.fetch_stock_prices manual__2025-05-16T10:46:29.925523+00:00 [running]> on host 9f5193fcdf75
+[2025-05-16T10:56:09.242+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_stock_news_and_sentiment_dag' AIRFLOW_CTX_TASK_ID='fetch_stock_prices' AIRFLOW_CTX_EXECUTION_DATE='2025-05-16T10:46:29.925523+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-16T10:46:29.925523+00:00'
+[2025-05-16T10:56:09.244+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-16T10:56:09.245+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-16T10:56:09.245+0000] {logging_mixin.py:190} INFO - Current task name:fetch_stock_prices state:running start_date:2025-05-16 10:56:08.948255+00:00
+[2025-05-16T10:56:09.246+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag and current dag run status:running
+[2025-05-16T10:56:09.247+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-16T10:56:09.474+0000] {logging_mixin.py:190} INFO - Error fetching AAPL: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:09.929+0000] {logging_mixin.py:190} INFO - Error fetching GOOG: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:10.338+0000] {logging_mixin.py:190} INFO - Error fetching MSFT: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:10.531+0000] {logging_mixin.py:190} INFO - Error fetching AMZN: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:10.730+0000] {logging_mixin.py:190} INFO - Error fetching META: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:10.925+0000] {logging_mixin.py:190} INFO - Error fetching NVDA: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:11.362+0000] {logging_mixin.py:190} INFO - Error fetching TSLA: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:11.569+0000] {logging_mixin.py:190} INFO - Error fetching NFLX: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:11.979+0000] {logging_mixin.py:190} INFO - Error fetching AMD: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:12.180+0000] {logging_mixin.py:190} INFO - Error fetching PLTR: We have detected your API key as 7MH8BBDFTW6MDMFJ and our standard API rate limit is 25 requests per day. Please subscribe to any of the premium plans at https://www.alphavantage.co/premium/ to instantly remove all daily rate limits.
+[2025-05-16T10:56:12.202+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/daily_news_sentiment_dag.py", line 63, in fetch_stock_prices
+    raise ValueError("No stock data found for previous day.")
+ValueError: No stock data found for previous day.
+[2025-05-16T10:56:12.215+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-05-16T10:56:12.216+0000] {logging_mixin.py:190} INFO - Task start:2025-05-16 10:56:08.948255+00:00 end:2025-05-16 10:56:12.214737+00:00 duration:3.266482
+[2025-05-16T10:56:12.217+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): fetch_stock_prices> dag:<DAG: daily_stock_news_and_sentiment_dag> dagrun:<DagRun daily_stock_news_and_sentiment_dag @ 2025-05-16 10:46:29.925523+00:00: manual__2025-05-16T10:46:29.925523+00:00, state:running, queued_at: 2025-05-16 10:46:29.974516+00:00. externally triggered: True>
+[2025-05-16T10:56:12.217+0000] {logging_mixin.py:190} INFO - Failure caused by No stock data found for previous day.
+[2025-05-16T10:56:12.218+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=daily_stock_news_and_sentiment_dag, task_id=fetch_stock_prices, run_id=manual__2025-05-16T10:46:29.925523+00:00, execution_date=20250516T104629, start_date=20250516T105608, end_date=20250516T105612
+[2025-05-16T10:56:12.264+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-16T10:56:12.265+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 20 for task fetch_stock_prices (No stock data found for previous day.; 467)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/airflow/dags/daily_news_sentiment_dag.py", line 63, in fetch_stock_prices
+    raise ValueError("No stock data found for previous day.")
+ValueError: No stock data found for previous day.
+[2025-05-16T10:56:12.301+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-05-16T10:56:12.341+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-16T10:56:12.347+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

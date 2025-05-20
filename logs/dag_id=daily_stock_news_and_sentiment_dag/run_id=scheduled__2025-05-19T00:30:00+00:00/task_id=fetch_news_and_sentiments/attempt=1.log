@@ -1,0 +1,28 @@
+[2025-05-19T17:09:24.823+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-19T17:09:24.853+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_news_and_sentiments scheduled__2025-05-19T00:30:00+00:00 [queued]>
+[2025-05-19T17:09:24.870+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_stock_news_and_sentiment_dag.fetch_news_and_sentiments scheduled__2025-05-19T00:30:00+00:00 [queued]>
+[2025-05-19T17:09:24.871+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-19T17:09:24.887+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_news_and_sentiments> on 2025-05-19 00:30:00+00:00
+[2025-05-19T17:09:24.897+0000] {standard_task_runner.py:72} INFO - Started process 19968 to run task
+[2025-05-19T17:09:24.903+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'daily_stock_news_and_sentiment_dag', 'fetch_news_and_sentiments', 'scheduled__2025-05-19T00:30:00+00:00', '--job-id', '50', '--raw', '--subdir', 'DAGS_FOLDER/daily_news_sentiment_dag.py', '--cfg-path', '/tmp/tmpbfe4wl90']
+[2025-05-19T17:09:24.905+0000] {standard_task_runner.py:105} INFO - Job 50: Subtask fetch_news_and_sentiments
+[2025-05-19T17:09:24.978+0000] {task_command.py:467} INFO - Running <TaskInstance: daily_stock_news_and_sentiment_dag.fetch_news_and_sentiments scheduled__2025-05-19T00:30:00+00:00 [running]> on host 9f5193fcdf75
+[2025-05-19T17:09:25.098+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_stock_news_and_sentiment_dag' AIRFLOW_CTX_TASK_ID='fetch_news_and_sentiments' AIRFLOW_CTX_EXECUTION_DATE='2025-05-19T00:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-19T00:30:00+00:00'
+[2025-05-19T17:09:25.100+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-19T17:09:25.101+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-19T17:09:25.102+0000] {logging_mixin.py:190} INFO - Current task name:fetch_news_and_sentiments state:running start_date:2025-05-19 17:09:24.854671+00:00
+[2025-05-19T17:09:25.102+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag and current dag run status:running
+[2025-05-19T17:09:25.103+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-19T17:11:20.470+0000] {base.py:84} INFO - Retrieving connection '***_default'
+[2025-05-19T17:11:20.812+0000] {logging_mixin.py:190} INFO - Inserted 78 rows into news_data for Apple on 2025-05-18
+[2025-05-19T17:11:20.814+0000] {logging_mixin.py:190} INFO - Inserted 10 rows into sentiment_data for Apple on 2025-05-18
+[2025-05-19T17:11:20.889+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-19T17:11:20.926+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-19T17:11:20.928+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=daily_stock_news_and_sentiment_dag, task_id=fetch_news_and_sentiments, run_id=scheduled__2025-05-19T00:30:00+00:00, execution_date=20250519T003000, start_date=20250519T170924, end_date=20250519T171120
+[2025-05-19T17:11:20.999+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-19T17:11:21.001+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-19T17:11:21.003+0000] {logging_mixin.py:190} INFO - Dag name:daily_stock_news_and_sentiment_dag queued_at:2025-05-19 17:09:03.691663+00:00
+[2025-05-19T17:11:21.004+0000] {logging_mixin.py:190} INFO - Task hostname:9f5193fcdf75 operator:PythonOperator
+[2025-05-19T17:11:21.089+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-19T17:11:21.191+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-19T17:11:21.195+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
