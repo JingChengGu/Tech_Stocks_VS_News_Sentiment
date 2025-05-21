@@ -1,4 +1,4 @@
-ticker,date,article_count,avg_sentiment
+stock,date,article_count,avg_sentiment
 AMD,2025-05-12,10,0.198
 AMD,2025-05-13,9,0.384
 AMD,2025-05-14,8,0.153
