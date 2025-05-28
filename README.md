@@ -85,7 +85,7 @@ The dashboard connects live to the Dockerized PostgreSQL instance on `localhost:
 
 ## 🤔 Limitations
 
-The current version of news article sentiment analysis does not purely focus on financial market related content, as news articles range from many different categories related to the tickers (new releases, CEO news, misaligned content). 
+The current version of news article sentiment analysis does not purely focus on financial market related content, as news articles range from many different categories related to the tickers (educational content, legal or political news, non-market content). 
 
 In future work, I plan to narrow down the news content that are injected into sentiment analysis to be more financially focused to better correlate to stock movements.
 
