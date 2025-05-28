@@ -1,6 +1,6 @@
 # Tech_Stocks_VS_News_Sentiment Dashboard
 
-🔗 **[Explore the Dashboard →]([(https://public.tableau.com/views/stocks_and_news/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link]))**  
+🔗 **[Explore the Dashboard →](https://public.tableau.com/views/stocks_and_news/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**  
 *A live Tableau dashboard tracking daily sentiment and stock performance*
 
 ## Overview
