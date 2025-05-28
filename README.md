@@ -97,5 +97,3 @@ In future work, I plan to narrow down the news content that are injected into se
 - Develop **trading backtest strategies** using historical sentiment
 - Build a **web frontend** with Streamlit or React
 - Explore **cloud deployment** and Airflow scalability
-
-## Final Thoughts
