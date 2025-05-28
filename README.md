@@ -3,7 +3,7 @@
 🔗 **[Explore the Dashboard →](https://public.tableau.com/views/stocks_and_news/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**  
 *A live Tableau dashboard tracking daily sentiment and stock performance*
 
-## Overview
+## 📊 Overview
 
 Lately, it feels like stock prices move more on headlines than fundamentals. I wanted to test that idea—how much influence does daily news really have on market movement? This project pulls stock and news data for major tech companies, runs sentiment analysis using FinBERT, and tracks the results in a Tableau dashboard. The goal: measure the connection between media tone and stock price behavior over time. 
 
@@ -12,7 +12,101 @@ It integrates real-time data ingestion, sentiment analysis using a fine-tuned tr
 
 ---
 
+## ⛓️ Architecture & Tech Stack
 
-- Build historial database with Alpha Vantage API and NewsAPI for 10 popular tech stocks (Using Python to pull from both API and calculate the daily news sentiment with FinBert)
-- Create a Docker container for daily Airflow news data and stock price data pulls and PostgreSQL database to store daily pulled data
-- Showcase the PostgreSQL data on Tableau and using Tableau public to showcase the dashboard.
+### Architecture
+
+- **ETL Pipeline** orchestrated via **Apache Airflow** (Dockerized)
+- **Two Data APIs**:
+  - [Alpha Vantage](https://www.alphavantage.co/) for stock prices
+  - [NewsAPI](https://newsapi.org/) for financial news
+- **Sentiment Analysis**: FinBERT via HuggingFace Transformers
+- **Database**: PostgreSQL (Dockerized)
+- **Dashboard**: Tableau connected to live PostgreSQL database
+
+### Tech Stack
+
+| category      | Technologies Used           |
+|---------------|-----------------------------|
+| Workflow Mgnt | Apache Airflow (Dockerized) |
+| Data Storage  | PostgreSQL (Dockerized)     |
+| API Data Pull | Alpha Vantage, NewsAPI      |
+| NLP Model      | HuggingFace Transformers, FinBERT, PyTorch      |
+| Backend Tools  | Python, Pandas, SQLAlchemy, Requests, dotenv    |
+| Deployment     | Docker Compose                                  |
+| Dashboarding   | Tableau    |
+
+---
+
+## 🧾 Data
+
+### Sources
+
+- **Stock Prices**: Daily OHLCV data from Alpha Vantage
+- **News Articles**: Headlines and descriptions from NewsAPI
+
+### Data Tables
+
+- `stock_prices_data`: Stock open, high, low, close, volume
+- `news_data`: Title, source, description, date, company ticker
+- `sentiment_data`: Aggregated daily sentiment scores by ticker
+
+*Note: Apple-related articles are filtered to remove fruit-related noise using keyword heuristics. This helps to focus on only Apple stock related news.*
+
+---
+
+## 🤖 Model
+
+Sentiment analysis is performed using [FinBERT](https://huggingface.co/yiyanghkust/finbert-tone), a BERT-based model fine-tuned on financial text.
+
+**Scoring Function:**
+
+```python
+Sentiment Score = P(positive) - P(negative)
+```
+
+Each article is scored individually. Sentiment scores are then averaged per company per day to produce a daily sentiment metric.
+
+---
+
+## 📈 Results
+
+The Tableau dashboard offers:
+
+- **Stock vs. Sentiment Time Series**: Compare daily closing prices with sentiment trends
+- **Company Filters**: Focus on individual tickers
+- **Event Detection**: Spot sentiment spikes tied to price moves
+
+The dashboard connects live to the Dockerized PostgreSQL instance on `localhost:5433`.
+
+---
+
+## 🤔 Limitations
+
+The current version of news article sentiment analysis does not purely focus on financial market related content, as news articles range from many different categories related to the tickers (new releases, CEO news, misaligned content). 
+
+In future work, I plan to narrow down the news content that are injected into sentiment analysis to be more financially focused to better correlate to stock movements.
+
+---
+
+## 🔮 Future Work
+
+- Add **alerting system** for sudden sentiment or price changes
+- Compare **multiple NLP models** for sentiment analysis
+- Develop **trading backtest strategies** using historical sentiment
+- Build a **web frontend** with Streamlit or React
+- Explore **cloud deployment** and Airflow scalability
+
+---
+
+## 👨‍💻 Author
+
+**Jason Gu**  
+Data Science @ UC San Diego  
+[LinkedIn](https://linkedin.com/in/jasongu) • [Portfolio](https://yourwebsite.com)
+
+---
+
+## 📜 License
+
+Apache 2.0
