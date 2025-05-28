@@ -24,6 +24,7 @@ It integrates real-time data ingestion, sentiment analysis using a fine-tuned tr
 - **Database**: PostgreSQL (Dockerized)
 - **Dashboard**: Tableau connected to live PostgreSQL database
 
+
 ### Tech Stack
 
 | category      | Technologies Used           |
@@ -48,8 +49,14 @@ It integrates real-time data ingestion, sentiment analysis using a fine-tuned tr
 ### Data Tables
 
 - `stock_prices_data`: Stock open, high, low, close, volume
+  
+  <img width="502" alt="Screenshot 2025-05-28 at 3 52 08 PM" src="https://github.com/user-attachments/assets/0a5b611b-d5e3-452d-8dd4-db10062caf82" />
 - `news_data`: Title, source, description, date, company ticker
+  
+  <img width="1427" alt="Screenshot 2025-05-28 at 3 50 40 PM" src="https://github.com/user-attachments/assets/6091a981-6d8d-42ea-b833-6519c78109fe" />
 - `sentiment_data`: Aggregated daily sentiment scores by ticker
+ 
+  <img width="372" alt="Screenshot 2025-05-28 at 3 53 13 PM" src="https://github.com/user-attachments/assets/e0e0f9ae-0893-49a3-9387-506bce9415c6" />
 
 *Note: Apple-related articles are filtered to remove fruit-related noise using keyword heuristics. This helps to focus on only Apple stock related news.*
 
