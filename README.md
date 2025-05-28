@@ -1,4 +1,4 @@
-# Tech_Stocks_VS_News_Sentiment Dashboard
+# Tech Stocks VS News Sentiment Dashboard
 
 🔗 **[Explore the Dashboard →](https://public.tableau.com/views/stocks_and_news/Dashboard1?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)**  
 *A live Tableau dashboard tracking daily sentiment and stock performance*
@@ -57,7 +57,9 @@ It integrates real-time data ingestion, sentiment analysis using a fine-tuned tr
 
 ## 🤖 Model
 
-Sentiment analysis is performed using [FinBERT](https://huggingface.co/yiyanghkust/finbert-tone), a BERT-based model fine-tuned on financial text.
+I initially experimented with TextBlob for sentiment analysis due to its simplicity and ease of integration. However, I quickly realized that its general-purpose sentiment scoring was insufficient for the nuances of financial news. Many articles that were contextually neutral or even optimistic in a financial sense were misclassified due to TextBlob’s lack of domain-specific understanding.
+
+To improve the quality of sentiment scoring, I moved to [FinBERT](https://huggingface.co/yiyanghkust/finbert-tone), a BERT-based model fine-tuned on financial text. FinBERT is better suited for interpreting language patterns found in news headlines an dmarket commentary. This shift allowed the model to more accurately reflect the sentiment tone relevant to market behavior.
 
 **Scoring Function:**
 
@@ -91,22 +93,9 @@ In future work, I plan to narrow down the news content that are injected into se
 
 ## 🔮 Future Work
 
-- Add **alerting system** for sudden sentiment or price changes
 - Compare **multiple NLP models** for sentiment analysis
 - Develop **trading backtest strategies** using historical sentiment
 - Build a **web frontend** with Streamlit or React
 - Explore **cloud deployment** and Airflow scalability
 
----
-
-## 👨‍💻 Author
-
-**Jason Gu**  
-Data Science @ UC San Diego  
-[LinkedIn](https://linkedin.com/in/jasongu) • [Portfolio](https://yourwebsite.com)
-
----
-
-## 📜 License
-
-Apache 2.0
+## Final Thoughts
